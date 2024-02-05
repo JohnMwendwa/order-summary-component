@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --pale-blue: 225, 100%, 94%;
+  --bright-blue: 245, 75%, 52%;
+
+  /* Neutral */
+  --very-pale-blue: 225, 100%, 98%;
+  --desaturated-blue: 224, 23%, 55%;
+  --dark-blue: 223, 47%, 23%;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1rem;
+  background-image: url("images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100vw 48.5vh;
+  background-color: hsl(var(--pale-blue));
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 5rem 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    background-image: url("images/pattern-background-desktop.svg");
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.card {
+  --rad: 1rem;
+  border-radius: var(--rad);
+  background-color: hsl(var(--very-pale-blue));
+  max-width: 28rem;
+  box-shadow: 0 2.5rem 2rem -0.5rem hsla(var(--dark-blue), 0.1);
+  text-align: center;
+  color: hsl(var(--dark-blue));
+}
+
+.card__header img {
+  border-radius: var(--rad) var(--rad) 0 0;
+  width: 100%;
+}
+
+.card__body {
+  padding: 1.75rem;
+}
+
+@media screen and (min-width: 640px) {
+  .card__body {
+    padding: 3rem;
+  }
+}
+
+.card__content p {
+  line-height: 1.6rem;
+  color: hsl(var(--desaturated-blue));
+}
+
+.card__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 1.2rem;
+  border-radius: 0.75rem;
+  background-color: hsla(var(--pale-blue), 0.3);
+}
+
+@media screen and (min-width: 640px) {
+  .card__plan {
+    padding: 1.5rem;
+  }
+}
+
+.card__plan h2 {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.75;
+}
+
+.card__plan a {
+  font-weight: 700;
+  color: hsla(var(--bright-blue), 0.8);
+}
+.card__plan a:hover {
+  text-decoration: none;
+  color: hsla(var(--bright-blue), 0.6);
+}
+
+.card__plan > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.card__footer {
+  margin-top: 2rem;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.9375rem 1rem;
+  border-radius: 0.75rem;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease-out;
+}
+
+.card__payment-btn {
+  background-color: hsl(var(--bright-blue));
+  box-shadow: 0rem 1rem 1rem hsla(var(--bright-blue), 0.2);
+  color: hsl(var(--very-pale-blue));
+}
+
+.card__payment-btn:hover {
+  background-color: hsla(var(--bright-blue), 0.7);
+  box-shadow: 0rem 1rem 1rem hsla(var(--bright-blue), 0.3);
+}
+
+.card__cancel-btn {
+  margin-top: 1rem;
+  color: hsl(var(--desaturated-blue));
+}
+.card__cancel-btn:hover {
+  color: hsl(var(--dark-blue));
+}
